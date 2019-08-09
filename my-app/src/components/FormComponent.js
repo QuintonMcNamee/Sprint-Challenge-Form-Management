@@ -13,7 +13,7 @@ function FormComponent({ values, errors, touched }) {
         {touched.password && errors.password && <p>{errors.password}</p>}
         <Field type="password" name="password" placeholder="Password" />
       </div>
-      <button type="submit">Submit!</button>
+      <button data-testid="submitId" type="submit">Submit!</button>
     </Form>
   );
 }
