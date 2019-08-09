@@ -9,7 +9,7 @@ const FormComponent = ({ values, errors, touched, handleSubmit, status }) => {
 
   useEffect(() => {
     if(status) {
-      setUser([...user, status]);
+      setUser([...status]);
     }
   }, [status]);
 
@@ -59,7 +59,7 @@ const FormikFormComponent = withFormik({
       .catch(err => console.log(err.response));
 
     axios
-    .get("http://localhost:5000/api/restricted/users", values)
+    .get("http://localhost:5000/api/restricted/users")
       .then(res => {
         console.log('test', res.data);
         setStatus(res.data);
